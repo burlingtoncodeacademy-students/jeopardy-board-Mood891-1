@@ -2,9 +2,16 @@
 import placeholderQuestions from "./placeholder-questions.js";
 console.log({ placeholderQuestions });
 
-// Wait for the Round 1 page to load
+// Wait for the Round 2 page to load
 window.addEventListener("load", function () {
-    if (document.getElementById("round-num").innerText === "1") {
+    const params = new URLSearchParams(window.location.search);
+    const player1Score = parseInt(params.get("player1Score"));
+    const player2Score = parseInt(params.get("player2Score"));
+    document.querySelector(".P1-Score span:last-child").innerText =
+        player1Score;
+    document.querySelector(".P2-Score span:last-child").innerText =
+        player2Score;
+    if (document.getElementById("round-num").innerText === "2") {
         // Display a notification that it is player 1's turn to choose
         alert("Player 1, it's your turn to choose!");
     }
@@ -12,7 +19,7 @@ window.addEventListener("load", function () {
 
 const round = document.getElementById("round-num").innerText; //Round is a piece of text that has a number in it, refereced in the html by all of class r
 let currentPlayer = 1; //starting player for the round is Player 1
-let secondGuess = false;
+let secondGuess = false; 
 //implemented in code where if first player guesses incorrectly, then it returns true for the other player; and if other player guesses wrong, it returns false
 
 // Get the modal and its components
@@ -34,7 +41,7 @@ passBtn.addEventListener("click", () => {
     modal.style.display = "none";
 });
 
-for (let i = 1; i < 6; i++) { 
+for (let i = 1; i < 6; i++) {
     // i is row number
     const rowClass = `.r${i}`; // for each run through loop: .r1, .r2, etc.
 
@@ -49,7 +56,12 @@ for (let i = 1; i < 6; i++) {
         // j is column number
         const j = colClass[1];
 
-        div.addEventListener("click", () => {
+        //same explanation in index.js, but this time all of the offsets have gottn rid of questions 1-5.
+        //In this div.addEventListener, we're pulling question and answers 6-10 for each category
+
+        div.addEventListener("click", () => { 
+            answer.value = "";
+
             const colOffset = (j - 1) * 10;
             const roundOffset = (parseInt(round) - 1) * 5;
             const rowOffset = i - 1;
@@ -99,31 +111,32 @@ for (let i = 1; i < 6; i++) {
                     // Reset the input value
                     answer.value = "";
 
-                    // Check if the game should move to Round 2
-            if (
-                parseInt(document.querySelector(".P1-Score span:last-child").innerText) >= 15000 ||
-                parseInt(document.querySelector(".P2-Score span:last-child").innerText) >= 15000 ||
-                checkForCompletion()
-            ) {
-                const params = new URLSearchParams(window.location.search);
-                const player1Score = parseInt(
-                    document.querySelector(".P1-Score span:last-child").innerText
-                );
-                const player2Score = parseInt(
-                    document.querySelector(".P2-Score span:last-child").innerText
-                );
-                params.set("player1Score", player1Score);
-                params.set("player2Score", player2Score);
-                alert(
-                    "Congratulations players! Either the board has been cleared or one of you has accumulated 15000 points or more! Let's move on to Round 2!"
-                );
-                modal.style.display = "none";
-                const r2Button = document.getElementById("r2-button");
-                r2Button.disabled = false;
-                r2Button.addEventListener("click", function () {
-                    window.location.href = "round-2.html?" + params.toString();
-                });
-            }
+                    // Check if the game should move to the Final Round
+                    if (
+                        parseInt(document.querySelector(".P1-Score span:last-child").innerText) >= 30000 ||
+                        parseInt(document.querySelector(".P2-Score span:last-child").innerText) >= 30000 ||
+                        checkForCompletion()
+                    ) { //^^End of Round 2 story
+                        const params = new URLSearchParams(window.location.search);
+                        const player1Score = parseInt(
+                            document.querySelector(".P1-Score span:last-child").innerText
+                        );
+                        const player2Score = parseInt(
+                            document.querySelector(".P2-Score span:last-child").innerText
+                        );
+                        params.set("player1Score", player1Score);
+                        params.set("player2Score", player2Score);
+                        alert(
+                            "Congratulations players! Either the board has been cleared or one of you has accumulated 30000 points or more! Let's move on to the Final Round!"
+                        );
+                        modal.style.display = "none";
+                        const fButton = document.getElementById("f-button");
+                        fButton.disabled = false; //enables the final round button to be clicked on
+                        fButton.addEventListener("click", function () {
+                            window.location.href = "final-jeopardy.html?" + params.toString();
+                        });
+                    }
+
                 } else if (secondGuess === false) {
                     // Subtract the point value from the player's score
                     const scoreClass =
@@ -133,7 +146,7 @@ for (let i = 1; i < 6; i++) {
                     const scoreElement = document.querySelector(scoreClass);
                     const currentScore = parseInt(scoreElement.innerText);
                     scoreElement.innerText =
-                        currentScore - parseInt(pointValue);
+                        currentScore - parseInt(pointValue); //subtracts the point value from player's score
 
                     // Reset the player's turn
                     currentPlayer = currentPlayer === 1 ? 2 : 1;
@@ -167,7 +180,7 @@ for (let i = 1; i < 6; i++) {
                     answer.value = "";
 
                     secondGuess = false;
-                } 
+                }
             };
 
             if (div.innerText === "") { //if a div is blank and they click on it, this message appears
@@ -176,7 +189,6 @@ for (let i = 1; i < 6; i++) {
                 modal.style.display = "none";
                 return;
             };
-            
         });
     }
 }
