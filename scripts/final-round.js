@@ -91,7 +91,6 @@ betButton.addEventListener("click", function () {
                         );
                         if (currentPlayer === 1) {
                             currentPlayer = 2;
-                            answer.value = "";
                             alert(
                                 "Player 1 has entered their answer.\n\nIt is now Player 2's turn.\n\nGood luck!"
                             );
@@ -133,7 +132,6 @@ betButton.addEventListener("click", function () {
                         );
                         if (currentPlayer === 1) {
                             currentPlayer = 2;
-                            answer.value = "";
                             alert(
                                 "Player 1 has entered their answer.\n\nIt is now Player 2's turn.\n\nGood luck!"
                             );
