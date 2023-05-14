@@ -94,6 +94,7 @@ betButton.addEventListener("click", function () {
                             alert(
                                 "Player 1 has entered their answer.\n\nIt is now Player 2's turn.\n\nGood luck!"
                             );
+                            answer.value = "";
                             // Close the modal box
                             modal.style.display = "none";
                         } else {
@@ -135,6 +136,7 @@ betButton.addEventListener("click", function () {
                             alert(
                                 "Player 1 has entered their answer.\n\nIt is now Player 2's turn.\n\nGood luck!"
                             );
+                            answer.value = "";
                             // Close the modal box
                             modal.style.display = "none";
                         } else {
