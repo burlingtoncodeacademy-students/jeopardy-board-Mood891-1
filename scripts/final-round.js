@@ -119,8 +119,7 @@ betButton.addEventListener("click", function () {
                             modal.style.display = "none";
 
                             notifyWinner(finalP1Score, finalP2Score);
-                        } 
-
+                        }
                     } else if (finalAnswer !== "burlington code academy") {
                         // Update the player's score
                         const p1Score = parseInt(
@@ -174,22 +173,25 @@ betButton.addEventListener("click", function () {
 function notifyWinner(finalP1Score, finalP2Score) {
     // Notify the users who won based on the final score and then takes you to the start of the game, with a three second timeout so that you as a user can see the final scores before receiving this alert
     if (finalP1Score > finalP2Score) {
-        setTimeout(function() {
+        setTimeout(function () {
             alert(
                 `The answer was: Burlington Code Academy!\n\nBased on the final scores, Player 1 has the higher score of ${finalP1Score}, so Player 1 wins!\n\nThank you for playing!`
             );
+            window.location.href = "index.html";
         }, 3000);
     } else if (finalP2Score > finalP1Score) {
-        setTimeout(function() {
+        setTimeout(function () {
             alert(
                 `The answer was: Burlington Code Academy!\n\nBased on the final scores, Player 2 has the higher score of ${finalP2Score}, so Player 2 wins!\n\nThank you for playing!`
             );
+            window.location.href = "index.html";
         }, 3000);
     } else {
-        setTimeout(function() {
+        setTimeout(function () {
             alert(
                 `The answer was: Burlington Code Academy!\n\nBased on the final scores, both players have the same score, so it's officially a tie!!\n\nThank you for playing!`
             );
+            window.location.href = "index.html";
         }, 3000);
     }
 }
