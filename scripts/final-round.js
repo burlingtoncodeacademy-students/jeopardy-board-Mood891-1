@@ -15,8 +15,14 @@ window.addEventListener("load", function () {
 });
 
 let currentPlayer = 1;
+
+//initial value of player 1 and player 2 wagers until it is updated
 let player1Wager = 0;
 let player2Wager = 0;
+
+// Calculate the final scores
+let finalP1Score = 0
+let finalP2Score = 0
 
 // Get the modal and its components
 const modal = document.getElementById("myModal");
@@ -79,17 +85,21 @@ betButton.addEventListener("click", function () {
                 // Add event listener to guess button
                 guessBtn.onclick = function () {
                     const finalAnswer = answer.value.trim().toLowerCase();
+                     // Update the player's score
+                    const p1Score = parseInt(
+                        document.querySelector(".P1-Score span:last-child")
+                            .innerText
+                    );
+                    const p2Score = parseInt(
+                        document.querySelector(".P2-Score span:last-child")
+                            .innerText
+                    );
                     if (finalAnswer === "burlington code academy") {
-                        // Update the player's score
-                        const p1Score = parseInt(
-                            document.querySelector(".P1-Score span:last-child")
-                                .innerText
-                        );
-                        const p2Score = parseInt(
-                            document.querySelector(".P2-Score span:last-child")
-                                .innerText
-                        );
                         if (currentPlayer === 1) {
+
+                            // Calculate the final scores of Player 1 and store it for later
+                            finalP1Score = p1Score + player1Wager;
+
                             currentPlayer = 2;
                             alert(
                                 "Player 1 has entered their answer.\n\nIt is now Player 2's turn.\n\nGood luck!"
@@ -103,9 +113,8 @@ betButton.addEventListener("click", function () {
                                 "Player 2 has entered their answer. Let's find out who won!"
                             );
 
-                            // Calculate the final scores
-                            const finalP1Score = p1Score + player1Wager;
-                            const finalP2Score = p2Score + player2Wager;
+                            // Calculate the final score
+                            finalP2Score = p2Score + player2Wager;
 
                             // Update the score display for both players
                             document.querySelector(
@@ -121,16 +130,11 @@ betButton.addEventListener("click", function () {
                             notifyWinner(finalP1Score, finalP2Score);
                         }
                     } else if (finalAnswer !== "burlington code academy") {
-                        // Update the player's score
-                        const p1Score = parseInt(
-                            document.querySelector(".P1-Score span:last-child")
-                                .innerText
-                        );
-                        const p2Score = parseInt(
-                            document.querySelector(".P2-Score span:last-child")
-                                .innerText
-                        );
                         if (currentPlayer === 1) {
+
+                            // Calculate the final scores for Player 1 and store it for now
+                            finalP1Score = p1Score - player1Wager;
+
                             currentPlayer = 2;
                             alert(
                                 "Player 1 has entered their answer.\n\nIt is now Player 2's turn.\n\nGood luck!"
@@ -145,8 +149,7 @@ betButton.addEventListener("click", function () {
                             );
 
                             // Calculate the final scores
-                            const finalP1Score = p1Score - player1Wager;
-                            const finalP2Score = p2Score - player2Wager;
+                            finalP2Score = p2Score - player2Wager;
 
                             // Update the score display for both players
                             document.querySelector(
