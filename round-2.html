@@ -5,11 +5,77 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Jeopardy</title>
-    <script src="./scripts/index.js" type="module"></script>
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
-    <h1>Second Round</h1>
+    <div class="Round-1">
+      <div class="Jeopardy-Header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Jeopardy%21_logo.png" alt="Jeopardy Logo">
+      </div>
+      <h1>ROUND-<span id="round-num">2</span></h1>
+    <div class="grid-container">
+      <div class="grid-item">NATURE</div>
+      <div class="grid-item">ANIMALS</div>
+      <div class="grid-item">COMPUTERS</div>  
+      <div class="grid-item">MYTHOLOGY</div>
+      <div class="grid-item">HISTORY</div>
+      <div class="grid-item">GENERAL</div>  
+      <div class="grid-item q r1 c1">200</div>
+      <div class="grid-item q r1 c2">200</div>
+      <div class="grid-item q r1 c3">200</div>  
+      <div class="grid-item q r1 c4">200</div>
+      <div class="grid-item q r1 c5">200</div>
+      <div class="grid-item q r1 c6">200</div>
+      <div class="grid-item q r2 c1">400</div>
+      <div class="grid-item q r2 c2">400</div>
+      <div class="grid-item q r2 c3">400</div>  
+      <div class="grid-item q r2 c4">400</div>
+      <div class="grid-item q r2 c5">400</div>
+      <div class="grid-item q r2 c6">400</div>
+      <div class="grid-item q r3 c1">600</div>
+      <div class="grid-item q r3 c2">600</div>
+      <div class="grid-item q r3 c3">600</div>  
+      <div class="grid-item q r3 c4">600</div>
+      <div class="grid-item q r3 c5">600</div>
+      <div class="grid-item q r3 c6">600</div>
+      <div class="grid-item q r4 c1">800</div>
+      <div class="grid-item q r4 c2">800</div>
+      <div class="grid-item q r4 c3">800</div>  
+      <div class="grid-item q r4 c4">800</div>
+      <div class="grid-item q r4 c5">800</div>
+      <div class="grid-item q r4 c6">800</div>
+      <div class="grid-item q r5 c1">1000</div>
+      <div class="grid-item q r5 c2">1000</div>
+      <div class="grid-item q r5 c3">1000</div>  
+      <div class="grid-item q r5 c4">1000</div>
+      <div class="grid-item q r5 c5">1000</div>
+      <div class="grid-item q r5 c6">1000</div>
+  </div>
+
+  <!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <h2 id="question"></h2>
+    <input type="text" id="answer" placeholder="Enter your answer">
+    <br>
+    <button id="guess-btn">Guess</button>
+    <button id="pass-btn">Pass</button>
+  </div>
+</div>
+    <!-- Below used to be buttons in the original Jepoardy project but was advised to change them to h3's and then span-->
+    <div class="Scores">
+      <h3 class="P1-Score"><span>PLAYER 1 SCORE:</span> <span>0</span></h3> 
+      <h3 class="P2-Score"><span>PLAYER 2 SCORE:</span> <span>0</span></h3>
+    </div>
+    <div class="final-button">
+      <button id="f-button" onclick="window.location.href='final-jeopardy.html'" disabled>FINAL ROUND</button>
+    </div>
+    <footer>
+      <p>@2023 JeopardyBoardAssignment, LLC.</p>
+    </footer>
     <!-- Do not change the script source. Allows import/export to work. -->
-    <script src="./scripts/index.js" type="module"></script>
+    <script src="./scripts/round-2.js" type="module"></script>
+    </div>
   </body>
 </html>

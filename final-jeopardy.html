@@ -5,10 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Final Jeopardy</title>
+    <link rel="stylesheet" href="styles/styles.css">
   </head>
   <body>
-    <h1>Final Jeopardy</h1>
+    <div class="Final-Round">
+      <div class="Jeopardy-Header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/c/ce/Jeopardy%21_logo.png" alt="Jeopardy Logo">
+      </div>
+      <h1>FINAL-<span id="round-final"> ROUND</span></h1>
+    <div class="Final-Question q r1 c1">
+      <p>
+        FINAL
+      </p>
+    </div>
+  <div class="Point-Final">
+    <input type="text" id="wage" placeholder="Enter your wage">
+  </div>
+    <div class="Bet-Button">
+      <button>BET</button>
+    </div>
+      <!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <h2 id="question"></h2>
+    <input type="text" id="f-answer" placeholder="Enter your final answer">
+    <br>
+    <button id="guess-btn">Guess</button>
+  </div>
+</div>
+    <div class="Scores">
+      <h3 class="P1-Score"><span>PLAYER 1 SCORE:</span> <span>0</span></h3> 
+      <h3 class="P2-Score"><span>PLAYER 2 SCORE:</span> <span>0</span></h3>
+    </div>
+    <footer>
+      <p>@2023 JeopardyBoardAssignment, LLC.</p>
+    </footer>
     <!-- Do not change the script source. Allows import/export to work. -->
-    <script src="./scripts/index.js" type="module"></script>
+    <script src="./scripts/final-round.js" type="module"></script>
   </body>
 </html>

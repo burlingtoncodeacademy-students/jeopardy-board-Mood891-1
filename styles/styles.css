@@ -1,0 +1,445 @@
+body {
+    background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/706ddd9c-2b36-4167-8a3e-5e01c1e0e020/ddsxagb-59e8b218-9a34-4beb-a709-4bee99881639.png/v1/fill/w_1192,h_670,q_70,strp/jeopardy__season_36_sky_background_by_nikolaib2001_ddsxagb-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiJcL2ZcLzcwNmRkZDljLTJiMzYtNDE2Ny04YTNlLTVlMDFjMWUwZTAyMFwvZGRzeGFnYi01OWU4YjIxOC05YTM0LTRiZWItYTcwOS00YmVlOTk4ODE2MzkucG5nIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.hX24Zyg-oa32bOkeuvm4yfu2G5xV9B5Hl6A5fZPK5Y4);
+    margin: 0;
+}
+ 
+ 
+ .Welcome-Page {
+    display: grid;
+    grid-template-columns: 1rem auto 1rem;
+    grid-template-rows: 5rem 12.5rem auto 10rem 5rem;
+    grid-template-areas:
+        ". header ."
+        ". logo ."
+        ". video ."
+        ". button ."
+        "footer footer footer";
+    min-height: 100vh;
+    grid-row-gap: 1rem;
+    grid-column-gap: 1rem;
+ }
+ 
+ 
+ 
+ 
+ .Welcome {
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+ }
+ 
+ 
+ .Jeopardy-Logo {
+    grid-area: logo;
+    display: flex;
+    justify-content: center;
+ }
+ 
+ 
+ .Jeopardy-Logo img {
+    position: static;
+    height: 200px;
+ }
+ 
+ 
+ .video {
+    grid-area: video;
+    display: flex;
+    justify-content: center;
+ }
+ 
+ 
+ .Play-Button {
+    grid-area: button;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+ }
+ 
+ 
+ .Play-Button button {
+    height: 100px;
+    width: 250px;
+    border-radius: 8px;
+    font-size: xxx-large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: #0047d6;
+    color: white;
+ }
+ 
+ 
+ footer {
+    grid-area: footer;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    color: white;
+ }
+ 
+ 
+ .Round-1 {
+    display: grid;
+    grid-template-columns: 1rem auto 1rem;
+    grid-template-rows: 5rem 10rem 2.5rem auto 10rem 12rem 5rem;
+    grid-template-areas:
+        ". header ."
+        ". heading1 ."
+        ". heading2 ."
+        ". table ."
+        "score score score"
+        "next next next"
+        "footer footer footer";
+    min-height: 100vh;
+    grid-row-gap: 1rem;
+    grid-column-gap: 1rem;
+ }
+ 
+ 
+ .Jeopardy-Header {
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+ }
+ 
+ 
+ .Round-1 h1 {
+    grid-area: heading1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 150px;
+    margin: 0;
+ }
+ 
+ 
+ .Round-1 h2{
+    grid-area: heading2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+ }
+ 
+ 
+ .grid-container {
+    grid-area: table;
+    display: grid;
+    background-color: black;
+    grid-template-columns: auto auto auto auto auto auto;
+    padding: 3px;
+ }
+ 
+ 
+ .grid-item {
+    background-color: #0047d6;
+    border: 3px solid #0a0a0a;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-shadow: 2px 2px 4px #000000;
+    padding: 35px;
+    font-size: xxx-large;
+    text-align: center;
+    color: orange;
+ }
+ 
+ 
+ .grid-item:nth-child(-n+6) {
+    color: white; /* set color for first 6 items (i.e. the CATEGORY items) */
+    font-size: xx-large;
+ }
+ 
+ 
+ #User-Input {
+    grid-area: userinput;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    width: 25%;
+    height: 35px;
+    border: 2px solid black;
+ }
+ 
+ 
+ .Guess-Pass {
+    grid-area: button;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    width: 25%;
+    height: 50px;
+ }
+ 
+ 
+ .Guess-Button button{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 32.5px;
+    background-color: #f9c106;
+ }
+ 
+ 
+ .Pass-Button button{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 32.5px;
+    background-color: #f9c106;
+ }
+ 
+ 
+ .Scores {
+    grid-area: score;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+ }
+ 
+ 
+ /* P1-Score: kept same inputs as it was a button prior, but what's listed below is to reflect it as an h3 span */
+ .P1-Score {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: #000000;
+    border-radius: 8px;
+    font-size: 40px;
+    color: white;
+    display: inline-block;
+ }
+ 
+ 
+ .P1-Score span:first-child {
+    font-weight: bold;
+    margin-right: 10px;
+ }
+ 
+ 
+ /* P2-Score: kept same inputs as it was a button prior, but what's listed below is to reflect it as an h3 span */
+ .P2-Score {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: #000000;
+    border-radius: 8px;
+    font-size: 40px;
+    color: white;
+    display: inline-block;
+ }
+ 
+ 
+ .P2-Score span:first-child {
+    font-weight: bold;
+    margin-right: 10px;
+ }
+ 
+ 
+ .P2-Score button{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    background-color: #000000;
+    border-radius: 8px;
+    font-size: 40px;
+    color: white;
+ }
+
+ .r2-button, .final-button {
+   grid-area: next;
+   grid-column-end: 3;
+   display: flex;
+   justify-content: flex-end;
+   text-align: center;
+   margin-top: 27px;
+}
+
+.r2-button button {
+   height: 100px;
+   width: 250px;
+   border-radius: 8px;
+   font-size: xxx-large;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   background-color: #0047d6;
+   color: white;
+}
+ 
+ 
+ .Round-2 {
+    display: grid;
+    grid-template-columns: 1rem auto 1rem;
+    grid-template-rows: 5rem 10rem 2.5rem auto 5rem 5rem 20rem 6.25rem 5rem;
+    grid-template-areas:
+        ". header ."
+        ". heading1 ."
+        ". heading2 ."
+        ". table ."
+        ". userinput ."
+        ". button ."
+        "score score score"
+        "next next next"
+        "footer footer footer";
+    min-height: 100vh;
+    grid-row-gap: 1rem;
+    grid-column-gap: 1rem;
+ }
+ 
+ 
+ .Round-2 h1 {
+    grid-area: heading1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 150px;
+    margin: 0;
+ }
+ 
+ 
+ .Round-2 h2{
+    grid-area: heading2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+ }
+
+ .final-button button {
+   height: 100px;
+   width: 250px;
+   border-radius: 8px;
+   font-size: xx-large;
+   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+   background-color: #0047d6;
+   color: white;
+}
+ 
+ 
+ .Final-Round {
+    display: grid;
+    grid-template-columns: 1rem auto 1rem;
+    grid-template-rows: 5rem 10rem auto 5rem 2.25rem 20rem 5rem;
+    grid-template-areas:
+        ". header ."
+        ". heading1 ."
+        ". question ."
+        ". point ."
+        ". bet ."
+        "score score score"
+        "footer footer footer";
+    min-height: 100vh;
+    grid-row-gap: 1rem;
+    grid-column-gap: 1rem;
+}
+
+
+.Final-Round h1 {
+    grid-area: heading1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 150px;
+    margin: 0;
+ }
+
+.Final-Question {
+    grid-area: question;
+    margin: auto;
+    width: 75%;
+    height: 500px;
+    text-shadow: 2px 2px 4px #000000;
+    background-color: #0047d6;
+    border-collapse: collapse;
+    border-width: 3px;
+    border-color: #0a0a0a;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Final-Question p {
+    font-size: xx-large;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 0;
+}
+
+.Final-Question p {
+    display: flex;
+    font-size: 75px;
+    color: #ffffff;
+    padding: 50px;
+}
+
+.Point-Final {
+   grid-area: point;
+   display: flex;
+   margin: auto;
+   align-items: center;
+   width: fit-content;
+   gap: 1rem;
+   flex-direction: column;
+}
+
+ .Bet-Button { 
+    grid-area: bet;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
+ 
+ 
+ .Bet-Button button {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 32.5px;
+    background-color: #f9c106;
+ }
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #0047d6;
+    margin: auto; /* Center vertically and horizontally */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    text-align: center; /* Center the input and buttons */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+  }
+  
+  /* Center the input placeholder */
+  input[type="text"]::placeholder {
+    text-align: center;
+  }
+  
+  input[type="text"] {
+    text-align: center;
+  }
+  
+  /* Change the background color of the Guess and Pass buttons */
+  #guess-btn,
+  #pass-btn {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    background-color: #f9c106;
+  }
+
+  /* Chose color white for the question because of background */
+  #question { 
+    color: white;
+  }
